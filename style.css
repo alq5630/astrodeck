@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Add relative positioning to create a stacking context */
+}
+
+/* Add an overlay with a light color and reduced opacity */
+body::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+/* Set the background image */
+body::after {
+  content: "";
+  background-image: url("https://images.ctfassets.net/cnu0m8re1exe/2pyz13PBaroSVfk8RZS0OD/2ca09e9463f96c3c17367256c3846c0a/shutterstock_1506783812.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: fixed; /* Fixed position for the background image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the overlay */
+}
+
+
+h1 {
+  color: #333;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #444;
+}
+
+.deck-container {
+  margin: 10px auto;
+  max-width: 175px;
+  background-color: #fff;
+  border: 5px solid #ccc;
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.card {
+  width: 150px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+
+.card:hover {
+  transform: scale(1.1);
+}
